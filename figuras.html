@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Figuras Geometricas / Curso Practico JS de Platzi</title>
+    <link rel="stylesheet" href="figuras.css">
+</head>
+
+<body>
+    <header>
+        <div class="header__container">
+            <div class="header__titulo__container">
+                <h1>Figuras Geometricas</h1>
+                <p>Este es el primer taller del cusrso de practico de JavaScript</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        
+        <section class="main__container">
+            <div class="card">
+                <h2>Cuadrado</h2>
+                <figure><img src="https://w.wallhaven.cc/full/nr/wallhaven-nr661j.jpg" alt=""></figure>
+                <p>Escribe cuanto mide cada lado de su cuadrado en centimetros</p>
+                <div class="card__buttons__container">
+                    <input type="number" id="input_cuadrado"  placeholder="lados"></input>
+                    <button type="button" onclick="calcularPerimetroCuadrado()">Calcular Perimetro</button>
+                    <button type="button" onclick="calcularAreaCuadrado()">Calcular Area</button>
+                </div>
+                <span id="resultadoCuadrado"> </span>
+            </div>
+            <div class="card">
+                <h2>Triangulo</h2>
+                <figure><img src="https://w.wallhaven.cc/full/yj/wallhaven-yjeyrd.jpg" alt=""></figure>
+                <p>Escribe cuánto mide cada uno de sus lados del triángulo en céntimetros y su altur.</p>
+                <div class="card__buttons__container">
+                    <div class="triangle-inputs">
+                        <input id="input_lado_a" type="number" placeholder="lado A" ></input>
+                        <input id="input_lado_b" type="number" placeholder="lado B" ></input>
+                        <input id="input_base" type="number" placeholder="base"   ></input>
+                        <input id="input_altura" type="number" placeholder="altura" ></input>
+                    </div>
+                    <button type="button" onclick="calcularPerimetroTriangle()">Calcular Perimetro</button>
+                    <button type="button" onclick="calcularAreaTriangle()">Calcular Area</button>
+                </div>
+                <span id="resultadoTriangulo"> </span>
+            </div>
+            <div class="card">
+                <h2>Circulo</h2>
+                <figure><img src="https://w.wallhaven.cc/full/w8/wallhaven-w8ejlx.jpg" alt=""></figure>
+                <p>Escribe cuánto mide el radio del circulo en centímetros.</p>
+                <div class="card__buttons__container">
+                    <input id="input_radio" type="number" placeholder="radio" ></input>
+                    <button type="button" onclick="calcularPerimetroCirculo()">Calcular Perimetro</button>
+                    <button type="button" onclick="calcularAreaCirculo()">Calcular Area</button>
+                </div>
+                <span id="resultadoCirculo"> </span>
+            </div>
+        </section>
+    </main>
+    <script src="./figuras.js"> </script>
+</body>
+
+</html>
