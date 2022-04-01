@@ -123,3 +123,21 @@ function calcularAreaCirculo()
 
     result.innerHTML = area;
 }
+function calcularAlturaTriangle()
+{
+    const a = document.getElementById('input_lado_ia').value;
+    const b = document.getElementById('input_lado_ib').value;
+    const base = document.getElementById('input_base_i').value;
+    const result = document.getElementById('resultadoIsosceles');
+    
+    if(a === b) 
+    {
+        resp = Math.sqrt((a**2) - ((base/2)**2)).toFixed(2);
+    }
+    else
+    {
+        resp ="No es Isósceles";
+    }
+
+    result.innerHTML = resp;
+}
