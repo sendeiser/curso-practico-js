@@ -141,3 +141,27 @@ function calcularAlturaTriangle()
 
     result.innerHTML = resp;
 }
+function descuento(precio,porcentaje)
+{
+    const resultado = precio - (precio * (porcentaje / 100));
+    return resultado;
+}
+var button_desc= document.getElementById("calcular_porcent");
+
+ var xclose = document.querySelector(".resultado__close");
+
+xclose.addEventListener("click",() => {
+    const display_result = document.querySelector(".resultado__porcentaje");
+    display_result.style.visibility="hidden";
+}) 
+
+button_desc.addEventListener("click",() =>{
+    const precio = document.getElementById("precio").value;
+    const desc = document.getElementById("descuento").value;
+    const resul_display = document.querySelector(".resultado__porcentaje");
+    const resul_place= document.querySelector(".descuento-aplicado");
+    const calc = descuento(precio,desc);
+    
+    resul_display.style.visibility = "visible";
+    resul_place.innerHTML=`${calc}`
+})

@@ -19,8 +19,7 @@
         </div>
     </header>
     <main>
-        
-        <section class="main__container">
+        <section class="main__figuras">
             <div class="card">
                 <h2>Cuadrado</h2>
                 <figure><img src="https://w.wallhaven.cc/full/nr/wallhaven-nr661j.jpg" alt=""></figure>
@@ -73,6 +72,27 @@
                     <button type="button" onclick="calcularAlturaTriangle()">Calcular Altura</button>
                 </div>
                 
+            </div>
+        </section>
+        <section class="main__porcentajes">
+            <h1 class="porcentajes__title">Porcentajes y Descuentos</h1>
+            <div class="porcentaje__cards__container">
+                <div class="porcentaje__card">
+                    <div class="card__header">
+                        <span></span>
+                        <p>Calculadora de Descuentos</p>
+                        <span></span>
+                    </div>
+                    <label for="precio">Igrese el Valor del Precio sin Descuento</label>
+                    <input type="number" placeholder="precio" id="precio" >
+                    <label for="descuento">Ingrese el descuento a aplicar</label><input type="number" placeholder="descuento" id="descuento" >
+                    <button class="card__btn"
+                    id="calcular_porcent">Calcular</button>
+                </div>
+                <div class="resultado__porcentaje">
+                    <h1 class="descuento-aplicado"></h1>
+                    <span class="resultado__close">X</span>
+                </div>
             </div>
         </section>
     </main>

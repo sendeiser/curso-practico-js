@@ -3,10 +3,15 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Pacifico', cursive;
 }
 html
 {
     font-size: 62.5%;
+}
+p::selection,h1::selection
+{
+    background:#222;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
@@ -50,12 +55,12 @@ main
     position: relative;
     min-height: 88vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color:rgb(114, 23, 43);
     border-top: 10px groove rgb(231, 72, 72);
 }
-main .main__container .card span
+main .main__figuras .card span
 {
     color: #fff;
     font-size: 8rem;
@@ -64,7 +69,7 @@ main .main__container .card span
     right:6%;
     z-index:2;
 }
-main .main__container
+main .main__figuras
 {
     width: 100%;
     display: grid;
@@ -73,10 +78,11 @@ main .main__container
     grid-gap: 2rem;
     justify-content: center;
     align-items: center;
-    margin: 1.5rem 0;
+    padding: 1.5rem 0;
     z-index:1;
+    background-color:rgb(114, 23, 43);
 }
-.main__container .card
+.main__figuras .card
 {
     position: relative;
     height: 100%;
@@ -89,24 +95,24 @@ main .main__container
     3px dashed rgb(255, 255, 255);
     background-color:rgb(30, 32, 32);
 }
-.main__container .card h2
+.main__figuras .card h2
 {
     font-size: 2.8rem; 
     text-shadow: 2px 2px 4px #222,
                  2px 2px 4px rgb(117, 116, 116);
     text-align: center;
 }
-.main__container .card p
+.main__figuras .card p
 {
     font-size: 1.6rem;
     text-shadow: 1px 2px 4px #222;
 }
-.main__container .card figure
+.main__figuras .card figure
 {
     height: 200px;
     background:rgb(90, 7, 234);
 }
-.main__container .card img
+.main__figuras .card img
 {
     width: 100%;
     height:100%;
@@ -166,4 +172,141 @@ main .main__container
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 0.1rem;
+}
+.main__porcentajes
+{
+    position: relative;
+    min-height:100vh;
+    width: 100%;
+    background-color:rgb(28, 22, 63);
+}
+
+.main__porcentajes  .porcentajes__title
+{
+    color: #fff;
+    font-size: 5rem;
+    text-align:center;
+    text-decoration: underline;
+    margin-top: 2rem;
+}
+.porcentaje__cards__container
+{
+    width:100%;
+    height:auto;
+    display: grid;
+    place-items:center;
+    padding: 1rem;
+    margin-top: 5rem;
+}
+.porcentaje__cards__container .porcentaje__card
+{
+    background-color:burlywood;
+    color: rgb(0, 0, 0);
+    font-weight: 500;
+    font-size: 1.8rem;
+    display: grid;
+    grid-template-rows:auto 1fr 1fr auto;
+    grid-gap:2rem;
+    justify-items: center;
+    padding: 1rem 1.7rem;
+    box-shadow: 6px 6px 5px -1px rgba(243, 237, 237, 0.15),
+    -3px -3px 5px -1px rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+.porcentaje__card .card__header 
+{
+    display: flex;
+    gap: 1rem;
+}
+.porcentaje__card .card__header span
+{
+    height: 38px;
+    width: 38px;
+    display: inline-block;
+    background: url("./img/desc.png") center/contain no-repeat;
+    
+}
+.porcentaje__card .card__header p
+{
+    color: rgb(252, 199, 130);
+    font-size: 2.8rem;
+    font-weight: 600;
+    text-decoration:underline;
+    text-shadow:3px 3px 6px #000,
+                -3px -3px 6px rgb(255, 255, 255);
+    text-align: center;
+}
+.porcentaje__card p:hover
+{
+    text-shadow:none;
+}
+.porcentaje__card label
+{
+    font-size: 1.8rem;
+    text-shadow: 6px 6px 10px  rgba(0, 0, 0, 0.15),
+    -6px -6px 10px  rgba(255, 255, 255, 0.7);
+    background-color: rgba(232, 192, 140, 0.484);
+    padding: .5rem 1.5rem;
+    border-radius: 2rem;
+}
+.porcentaje__card label:nth-child(2)
+{
+    text-align: center;
+}
+.porcentaje__card label:hover
+{
+    text-shadow: none;
+    text-decoration: underline;
+}
+.porcentaje__card input
+{
+    background:transparent;
+    outline:none;
+    border:none;
+    border-bottom: 2px dashed #000;
+    font-size: 1.8rem;
+}
+.porcentaje__card .card__btn
+{
+    background-color:burlywood;
+    font-weight: 500;
+    font-size: 1.5rem;
+    border:none;
+    border-radius: 1.5rem;
+    box-shadow: 6px 6px 5px -1px rgba(0, 0, 0, 0.15),
+    -3px -3px 5px -1px rgba(255, 255, 255, 0.7);
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+}
+.porcentaje__card .card__btn:active
+{
+    box-shadow: none;
+    color: #fff;  
+}
+.resultado__porcentaje
+{
+    visibility: hidden;
+    position: absolute;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    height:100vh;
+    background:rgba(0, 0, 0, 0.403);
+    z-index: 1;
+    top: 0;
+    
+}
+.resultado__porcentaje .descuento-aplicado
+{
+    color: #fff;
+    font-size: 8rem;
+}
+.resultado__porcentaje .resultado__close
+{
+    position: absolute;
+    color: #fff;
+    font-size: 4rem;
+    top: 0;
+    right: 20px;
+    cursor: pointer;
 }
