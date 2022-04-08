@@ -293,7 +293,7 @@ main .main__figuras
     height:100vh;
     background:rgba(0, 0, 0, 0.403);
     z-index: 1;
-    top: 0;
+    top: 3rem;
     
 }
 .resultado__porcentaje .descuento-aplicado
@@ -306,7 +306,7 @@ main .main__figuras
     position: absolute;
     color: #fff;
     font-size: 4rem;
-    top: 0;
+    top: 2rem;
     right: 20px;
     cursor: pointer;
 }

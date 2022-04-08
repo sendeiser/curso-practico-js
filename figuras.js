@@ -148,8 +148,13 @@ function descuento(precio,porcentaje)
 }
 var button_desc= document.getElementById("calcular_porcent");
 
- var xclose = document.querySelector(".resultado__close");
+var xclose = document.querySelector(".resultado__close");
 
+var display_porcent = document.querySelector(".resultado__porcentaje");
+
+display_porcent.addEventListener("click",() =>{
+    document.querySelector(".resultado__porcentaje").style.visibility="hidden"
+})
 xclose.addEventListener("click",() => {
     const display_result = document.querySelector(".resultado__porcentaje");
     display_result.style.visibility="hidden";
