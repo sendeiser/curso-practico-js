@@ -53,7 +53,7 @@ header .header__titulo__container p
 main
 {
     position: relative;
-    min-height: 88vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -200,6 +200,7 @@ main .main__figuras
 }
 .porcentaje__cards__container .porcentaje__card
 {
+    position: relative;
     background-color:burlywood;
     color: rgb(0, 0, 0);
     font-weight: 500;
@@ -220,11 +221,16 @@ main .main__figuras
 }
 .porcentaje__card .card__header span
 {
-    height: 38px;
-    width: 38px;
+    height: 58px;
+    width: 58px;
     display: inline-block;
     background: url("./img/desc.png") center/contain no-repeat;
-    
+   
+}
+.porcentaje__card .card__header span:nth-child(1)
+{
+    position: absolute;
+    bottom: 1rem;
 }
 .porcentaje__card .card__header p
 {
@@ -233,7 +239,7 @@ main .main__figuras
     font-weight: 600;
     text-decoration:underline;
     text-shadow:3px 3px 6px #000,
-                -3px -3px 6px rgb(255, 255, 255);
+                -3px -3px 6px rgb(65, 67, 1);
     text-align: center;
 }
 .porcentaje__card p:hover
@@ -266,6 +272,11 @@ main .main__figuras
     border-bottom: 2px dashed #000;
     font-size: 1.8rem;
 }
+.porcentaje__card .buttons__container
+{
+    display: flex;
+    gap: 1rem;
+}
 .porcentaje__card .card__btn
 {
     background-color:burlywood;
@@ -283,6 +294,57 @@ main .main__figuras
     box-shadow: none;
     color: #fff;  
 }
+
+.porcentaje__cards__container .cupon__container
+{
+    background-color:rgb(0, 0, 0,0.09);
+    position: absolute;
+    display:none;
+    justify-content:center;
+    gap:1rem;
+    width: 100%;
+}
+.porcentaje__cards__container .cupon__container .cupon__body
+{
+    display: flex;
+    gap:1rem;
+    height: min-content;
+}
+.porcentaje__cards__container .cupon__container input
+{
+    font-size: 1.8rem;
+    outline: none;
+    border:none;
+    padding-left: .5rem;
+    border-radius:20px;
+    height:2.7rem;
+    box-shadow: 1px 1px 2px #000;
+}
+
+.cupon__container .cupon__body .cupon__aplicar
+{
+    border:none;
+    background-color: #fff;
+    padding: .1rem;
+    box-shadow: 1px 1px 2px #000;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.cupon__container .cupon__body .cupon__aplicar:active
+{
+    background-color: #000;
+    color: #fff;
+}
+.porcentaje__cards__container .cupon__container .close__cupon
+{
+    color: #fff;
+    font-size: 2rem;
+    position: absolute;
+    top:-10%;
+    right:6%;
+    cursor: pointer;
+}
+
 .resultado__porcentaje
 {
     visibility: hidden;
@@ -292,9 +354,8 @@ main .main__figuras
     place-items: center;
     height:100vh;
     background:rgba(0, 0, 0, 0.403);
-    z-index: 1;
-    top: 3rem;
-    
+    z-index: 2;
+    top: 0;
 }
 .resultado__porcentaje .descuento-aplicado
 {
@@ -306,7 +367,7 @@ main .main__figuras
     position: absolute;
     color: #fff;
     font-size: 4rem;
-    top: 2rem;
-    right: 20px;
+    top: 6rem;
+    right: 25px;
     cursor: pointer;
 }

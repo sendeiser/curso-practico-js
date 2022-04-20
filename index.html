@@ -86,8 +86,19 @@
                     <label for="precio">Igrese el Valor del Precio sin Descuento</label>
                     <input type="number" placeholder="precio" id="precio" >
                     <label for="descuento">Ingrese el descuento a aplicar</label><input type="number" placeholder="descuento" id="descuento" >
-                    <button class="card__btn"
-                    id="calcular_porcent">Calcular</button>
+                    <div class="buttons__container">
+                        <button class="card__btn"
+                        id="calcular_porcent">Calcular</button>
+                        <button class="cupon card__btn" id="cupon-btn">Cupon</button>
+                    </div>
+                    
+                </div>
+                <div class="cupon__container">
+                    <div class="cupon__body">
+                        <input type="text" id="cupon__inp" placeholder="Ingrese el cupon">
+                        <button class="cupon__aplicar">Aplicar</button>
+                    </div>
+                    <span class="close__cupon">X</span>
                 </div>
                 <div class="resultado__porcentaje">
                     <h1 class="descuento-aplicado"></h1>

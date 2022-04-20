@@ -152,6 +152,12 @@ var xclose = document.querySelector(".resultado__close");
 
 var display_porcent = document.querySelector(".resultado__porcentaje");
 
+var cupon_btn = document.getElementById("cupon-btn");
+
+var close_cupon = document.querySelector('.close__cupon');
+
+var cupon_aply = document.querySelector(".cupon__aplicar");
+
 display_porcent.addEventListener("click",() =>{
     document.querySelector(".resultado__porcentaje").style.visibility="hidden"
 })
@@ -163,10 +169,69 @@ xclose.addEventListener("click",() => {
 button_desc.addEventListener("click",() =>{
     const precio = document.getElementById("precio").value;
     const desc = document.getElementById("descuento").value;
+
     const resul_display = document.querySelector(".resultado__porcentaje");
+
     const resul_place= document.querySelector(".descuento-aplicado");
+
     const calc = descuento(precio,desc);
     
     resul_display.style.visibility = "visible";
     resul_place.innerHTML=`${calc}`
+})
+
+cupon_btn.addEventListener("click",() => {
+    const cupon_container = document.querySelector('.cupon__container');
+    cupon_container.style.display="flex";
+})
+
+close_cupon.addEventListener("click",() => {
+    const cupon_container = document.querySelector('.cupon__container');
+    cupon_container.style.display="none";
+})
+
+cupon_aply.addEventListener("click",() => {
+    const precio = document.getElementById("precio").value;
+    const desc = document.getElementById("descuento").value;
+    
+    const cupon = document.getElementById("cupon__inp").value;
+    
+    const resul_display = document.querySelector(".resultado__porcentaje");
+
+    const resul_place= document.querySelector(".descuento-aplicado");
+
+    const coupons = [
+        {
+            name: "JuanDC_es_Batman",
+            discount: 15,
+        },
+        {
+            name: "pero_no_le_digas_a_nadie",
+            discount: 30,
+        },
+        {
+            name: "es_un_secreto",
+            discount: 25,
+        },
+    ];
+
+   /*  const isCouponValueValid = function (coupons) {
+        return coupons.name === cupon;
+    }; */
+    
+    const userCoupon = coupons.find(coupon => coupon.name === cupon);
+    
+    if (!userCoupon) {
+        alert("El cupón " + cupon + "no es válido");
+    }
+    else
+    {
+        const desc_mas_cupon = parseInt(userCoupon.discount) + parseInt(desc);
+        const calc = descuento(precio,desc_mas_cupon);
+        resul_display.style.visibility = "visible";
+        resul_place.innerHTML=`${calc}`;
+    }
+
+
+    
 })
